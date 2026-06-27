@@ -27,6 +27,10 @@ from sklearn.ensemble import (
 import mlflow
 from urllib.parse import urlparse
 
+import dagshub
+dagshub.init(repo_owner='nainaaa1105', repo_name='networksecurity', mlflow=True)
+
+
 # DagsHub Integration (TEMPORARILY DISABLED)
 # To re-enable DagsHub in future:
 # 1. Uncomment the dagshub import and init below
