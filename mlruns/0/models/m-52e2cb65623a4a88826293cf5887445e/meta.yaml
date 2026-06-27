@@ -1,0 +1,10 @@
+artifact_location: file:C:\Users\naina\Downloads\Ml\Course\NetworkSecurity\mlruns/0/models/m-52e2cb65623a4a88826293cf5887445e/artifacts
+creation_timestamp: 1782579988826
+experiment_id: '0'
+last_updated_timestamp: 1782580000016
+model_id: m-52e2cb65623a4a88826293cf5887445e
+model_type: null
+name: model
+source_run_id: daa56074d2f3436cbea3debf776ebfc4
+status: 2
+status_message: null

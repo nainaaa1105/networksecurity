@@ -1,0 +1,23 @@
+artifact_path: file:C:\Users\naina\Downloads\Ml\Course\NetworkSecurity\mlruns/0/models/m-fde608a96bdb4b21b4230bb34d3e080e/artifacts
+flavors:
+  python_function:
+    env:
+      conda: conda.yaml
+      virtualenv: python_env.yaml
+    loader_module: mlflow.sklearn
+    model_path: model.skops
+    predict_fn: predict
+    python_version: 3.10.0
+  sklearn:
+    code: null
+    pickled_model: model.skops
+    serialization_format: skops
+    sklearn_version: 1.7.2
+    skops_trusted_types: null
+mlflow_version: 3.14.0
+model_id: m-fde608a96bdb4b21b4230bb34d3e080e
+model_size_bytes: 31451535
+model_uuid: m-fde608a96bdb4b21b4230bb34d3e080e
+prompts: null
+run_id: 2309c496f7f246cb9e179c6dbd94b6eb
+utc_time_created: '2026-06-27 18:05:50.998163'
