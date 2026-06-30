@@ -43,14 +43,6 @@ dagshub.init(repo_owner='nainaaa1105', repo_name='networksecurity', mlflow=True)
 # os.environ["MLFLOW_TRACKING_USERNAME"] = "<username>"
 # os.environ["MLFLOW_TRACKING_PASSWORD"] = "<token>"
 
-# Configure MLflow for Local Tracking (Development)
-LOCAL_MLFLOW_DIR = os.path.join(os.getcwd(), "mlruns")
-os.environ["MLFLOW_TRACKING_URI"] = f"file:{LOCAL_MLFLOW_DIR}"
-
-
-
-
-
 class ModelTrainer:
     def __init__(self,model_trainer_config:ModelTrainerConfig,data_transformation_artifact:DataTransformationArtifact):
         try:
@@ -140,21 +132,49 @@ class ModelTrainer:
         classification_test_metric=get_classification_score(y_true=y_test,y_pred=y_test_pred)
 
         self.track_mlflow(best_model,classification_test_metric)
+    
+        preprocessor = load_object(
+        file_path=self.data_transformation_artifact.preprocessor_object_file_path
+        )
 
-        preprocessor = load_object(file_path=self.data_transformation_artifact.preprocessor_object_file_path)
-            
-        model_dir_path = os.path.dirname(self.model_trainer_config.trained_model_file_path)
-        os.makedirs(model_dir_path,exist_ok=True)
+        model_dir_path = os.path.dirname(
+            self.model_trainer_config.trained_model_file_path
+        )
+        os.makedirs(model_dir_path, exist_ok=True)
 
-        network_model=NetworkModel(preprocessor=preprocessor,model=best_model)
-        save_object(self.model_trainer_config.trained_model_file_path, obj=network_model)
-        
-        # Save best model to designated artifact directory
+        network_model = NetworkModel(
+            preprocessor=preprocessor,
+            model=best_model
+            )
+
+        # Save combined model in artifact folder
+        save_object(
+            self.model_trainer_config.trained_model_file_path,
+            obj=network_model
+        )
+
+        # Save best sklearn model in artifact folder
         model_artifact_path = os.path.join(
             os.path.dirname(self.model_trainer_config.trained_model_file_path),
             "best_model.pkl"
         )
         save_object(model_artifact_path, best_model)
+
+        # --------------------------------------------------
+        # Save files required by FastAPI
+        # --------------------------------------------------
+
+        os.makedirs("final_model", exist_ok=True)
+
+        save_object(
+            "final_model/model.pkl",
+            best_model
+        )
+
+        save_object(
+            "final_model/preprocessor.pkl",
+            preprocessor
+        )
         
 
         ## Model Trainer Artifact

@@ -1,0 +1,32 @@
+[2026-06-28 00:22:35,024] 1025 - httpx - INFO- HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"
+[2026-06-28 00:22:35,071] 107 - dagshub - INFO- Accessing as nainaaa1105
+[2026-06-28 00:22:35,971] 1025 - httpx - INFO- HTTP Request: GET https://dagshub.com/api/v1/repos/nainaaa1105/networksecurity "HTTP/1.1 200 OK"
+[2026-06-28 00:22:36,718] 1025 - httpx - INFO- HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"
+[2026-06-28 00:22:36,722] 107 - dagshub - INFO- Initialized MLflow to track repo "nainaaa1105/networksecurity"
+[2026-06-28 00:22:36,722] 107 - dagshub - INFO- Repository nainaaa1105/networksecurity initialized!
+[2026-06-28 00:22:37,151] 19 - root - INFO- Initiating data ingestion
+[2026-06-28 00:22:44,671] 68 - root - INFO- Performed train test split on the data
+[2026-06-28 00:22:44,671] 69 - root - INFO- Exited the split_data_as_train_test method of Data_Ingestion class
+[2026-06-28 00:22:44,672] 74 - root - INFO- Exporting train and test file path
+[2026-06-28 00:22:44,748] 77 - root - INFO- Exported train and test file path.
+[2026-06-28 00:22:44,749] 21 - root - INFO- Data ingestion completed
+[2026-06-28 00:22:44,795] 40 - root - INFO- Required number of columns:31
+[2026-06-28 00:22:44,795] 41 - root - INFO- Data frame has columns:31
+[2026-06-28 00:22:44,795] 40 - root - INFO- Required number of columns:31
+[2026-06-28 00:22:44,796] 41 - root - INFO- Data frame has columns:31
+[2026-06-28 00:22:44,998] 25 - root - INFO- Data validation completed
+[2026-06-28 00:22:44,998] 26 - root - INFO- Data transformation started
+[2026-06-28 00:22:44,998] 55 - root - INFO- Entered the initiate_data_transformation method of DataTransformation class
+[2026-06-28 00:22:44,998] 57 - root - INFO- Starting data transformation
+[2026-06-28 00:22:45,032] 45 - root - INFO- Entered the get_data_transformer_object method of DataTransformation class
+[2026-06-28 00:22:45,032] 48 - root - INFO- Initialise KNNImputer with {'n_neighbors': 3, 'weights': 'uniform', 'missing_values': nan}
+[2026-06-28 00:22:45,049] 46 - root - INFO- Entered the save_object method of MainUtils class
+[2026-06-28 00:22:45,054] 50 - root - INFO- Exited the save_object method of MainUtils class
+[2026-06-28 00:22:45,056] 30 - root - INFO- Data transformation completed
+[2026-06-28 00:22:45,056] 32 - root - INFO- Model Training started
+[2026-06-28 00:31:24,087] 46 - root - INFO- Entered the save_object method of MainUtils class
+[2026-06-28 00:31:24,154] 50 - root - INFO- Exited the save_object method of MainUtils class
+[2026-06-28 00:31:24,154] 46 - root - INFO- Entered the save_object method of MainUtils class
+[2026-06-28 00:31:24,214] 50 - root - INFO- Exited the save_object method of MainUtils class
+[2026-06-28 00:31:24,214] 165 - root - INFO- Model trainer artifact: ModelTrainerArtifact(trained_model_file_path='Artifacts\\06_28_2026_00_22_14\\model_trainer\\trained_model\\model.pkl', train_metric_artifact=ClassificationMetricArtifact(f1_score=0.9906278343242971, precision_score=0.9881383192601528, recall_score=0.9931299252374217), test_metric_artifact=ClassificationMetricArtifact(f1_score=0.9766489143793528, precision_score=0.9667477696674777, recall_score=0.9867549668874173))
+[2026-06-28 00:31:24,227] 37 - root - INFO- Model Training artifact created

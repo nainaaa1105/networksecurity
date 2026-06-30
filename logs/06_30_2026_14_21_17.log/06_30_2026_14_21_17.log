@@ -1,0 +1,7 @@
+[2026-06-30 14:21:35,707] 1025 - httpx - INFO- HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"
+[2026-06-30 14:21:35,719] 107 - dagshub - INFO- Accessing as nainaaa1105
+[2026-06-30 14:21:38,285] 1025 - httpx - INFO- HTTP Request: GET https://dagshub.com/api/v1/repos/nainaaa1105/networksecurity "HTTP/1.1 200 OK"
+[2026-06-30 14:21:40,437] 1025 - httpx - INFO- HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"
+[2026-06-30 14:21:40,440] 107 - dagshub - INFO- Initialized MLflow to track repo "nainaaa1105/networksecurity"
+[2026-06-30 14:21:40,440] 107 - dagshub - INFO- Repository nainaaa1105/networksecurity initialized!
+[2026-06-30 14:21:47,588] 1025 - httpx - INFO- HTTP Request: POST http://testserver/predict "HTTP/1.1 200 OK"
